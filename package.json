@@ -1,6 +1,6 @@
 {
   "name": "trv-webpack-bundle-analyzer",
-  "version": "3.0.3-rc3",
+  "version": "3.0.3-rc4",
   "description": "Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap",
   "author": "Yury Grunin <grunin.ya@ya.ru>",
   "license": "MIT",
