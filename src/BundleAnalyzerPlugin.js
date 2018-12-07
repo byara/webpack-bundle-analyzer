@@ -21,6 +21,7 @@ class BundleAnalyzerPlugin {
       statsOptions: null,
       excludeAssets: null,
       logLevel: 'info',
+      deferAnalyzer: true,
       // deprecated
       startAnalyzer: true,
       ...opts
@@ -55,9 +56,13 @@ class BundleAnalyzerPlugin {
 
       if (actions.length) {
         // Making analyzer logs to be after all webpack logs in the console
-        setImmediate(() => {
+        if (this.opts.deferAnalyzer) {
+          setImmediate(() => {
+            actions.forEach(action => action());
+          });
+        } else {
           actions.forEach(action => action());
-        });
+        }
       }
     };
 
