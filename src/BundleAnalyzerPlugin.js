@@ -21,6 +21,7 @@ class BundleAnalyzerPlugin {
       statsOptions: null,
       excludeAssets: null,
       logLevel: 'info',
+      // defer analyzer by default to true
       deferAnalyzer: true,
       // deprecated
       startAnalyzer: true,
@@ -61,6 +62,7 @@ class BundleAnalyzerPlugin {
             actions.forEach(action => action());
           });
         } else {
+          // immediately start logging
           actions.forEach(action => action());
         }
       }
